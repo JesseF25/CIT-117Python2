@@ -1,0 +1,78 @@
+# Jesse Ferguson
+#
+#
+
+class Numerology:
+
+    def __init__(self, sName):
+        self.sName = sName.upper
+        return self.__sName
+
+    # coding the "getters":
+
+class Birthday:
+    
+    def _init_(self, Birthday,):
+        self.Birthday = sBirthday
+        self.date_of_birth = date_of_birth
+
+    def __date_of_birth(self, date_of_birth, dob):
+        self.date_of_birth = date_of_birth
+        self.dob = dob
+
+    def __LifePath__(self,date_of_birth):
+        self.date_of_birth.reduced
+
+
+
+    def call_the_getterand _reduce(func_to_call):
+        def wrapper(nNumberIn):
+
+            def reductionNumber(iNumber):
+                while (len(str(inumber)) > 1):
+                    iNumber =(iNumber // 10) +(iNumber % 10)
+                return iNumber
+    
+    def getPersonality(self, sName, letters):
+        self.letters = letters
+        return self.__sName
+
+
+    def getSoulNumber(self, sName):
+        return self.__sName 
+
+    def get__Attitude__(self, date_of_birth):
+        self.Attitude = Attitude
+        self.date_of_birth= date_of_birth
+        return
+
+    def get__BirthdayNumber__(self, date_of_birth):
+        self.__date_of_birth = date_of_birth
+        return
+
+    def 
+
+    def getPowerName(self, SoulNumber, Personality):
+        self.PowerName = SoulNumber + Personality
+        return
+
+
+
+
+
+
+
+
+    
+
+    
+'''
+    get Attitude
+
+    getbirthday
+    
+    getdate_of_birth
+
+    get PowerName
+
+'''
