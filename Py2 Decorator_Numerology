@@ -1,0 +1,75 @@
+
+
+# Purpose:   Combine the concepts for Numerology with reduction.
+#            Reduction MUST must happen for each getter so we
+#            combine the TWO with Python Decorators...
+def call_the_getter_and_reduce(func_to_call):
+    
+    def wrapper(nNumberIn):
+
+       # Make the reduce logic present AFTER each call to getter:
+       #+---------------------------------------------------------------+ 
+        def reduceNumber(iNumber):                                     #| 
+            # reduce to a single number.  For example 29 --> 2      
+   #|
+            while (len(str(iNumber)) > 1):                             #|
+                iNumber = (iNumber // 10) +(iNumber % 10)              #|
+                                                                       #|
+            return iNumber                                             #|
+       #+---------------------------------------------------------------+ 
+
+        # Call the getter that was passed to the decorator such:
+        # getLifePath() or getAttitude()
+        print("Function that is called: ", func_to_call)
+        fResult = func_to_call(nNumberIn)
+
+        #Return the getter value that is reduced:
+        return reduceNumber(fResult)
+
+        #return reduceNumber( func_to_call(nNumberIn) )
+
+    return wrapper
+
+# Link the getter getLifePath to the decorator that
+# call the getLifePath() AND the reduceNumber() combined
+
+@call_the_getter_and_reduce #<---link decorate_prof_c_code
+def getLifePath(sDOB):
+
+    sDOB = sDOB.replace('/','').replace('-','')
+    iSum = 0
+    for sChar in sDOB:
+        iSum += int(sChar)
+
+    print(iSum)
+    return iSum
+
+# Link the getter getAttitude to the decorator that
+# call the getLifePath() AND the reduceNumber() combined
+@call_the_getter_and_reduce #<---link decorate_prof_c_code
+def getAttitude(sDOB):
+
+    iSum = int(sDOB[0:2]) + int(sDOB[3:5])
+    print(iSum)
+    return iSum
+
+
+def main():
+
+    while True:
+
+        sDOB = input("Enter a String for Date (04/20/2024) for Birthdate (0 to exit): ")
+            
+        if sDOB == "":
+            break
+
+        ################################
+        # Numerology getters Example:  #
+        ################################
+        nResult = getLifePath(sDOB)
+        print(f"Life Path: {sDOB}! is: {nResult:,}\n\n" )
+
+        nResult = getAttitude(sDOB)
+        print(f"Attitude: {sDOB}! is: {nResult:,}\n\n" )
+
+main()
