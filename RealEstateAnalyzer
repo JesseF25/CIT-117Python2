@@ -1,0 +1,127 @@
+# Name: Jesse Ferguson - This works
+# Assignment: Real Estate and Files
+# Reflection: What I liked learning to import file into python from a CSV.
+#             What I struggled with stringing funtions together? keeping the string function operating cohearently. 
+# What approach did I use, lots for sample files that work. I have a lot of sucess operating the tasks individually
+# How many dictionaries did I use for this assignment? two
+# two things learned on this assignment:
+#    1. Importing CSV files into Python
+#    2. Coding the Median function without using python's Median functions.
+
+import csv
+from pathlib import Path
+
+lstData =[]
+def getDataInput():
+    
+    data_file = Path('RealEstateData.csv')
+    with data_file.open(mode='r') as file:
+        return list(csv.reader(file))[1:]
+
+print(lstData)
+
+
+def getMedian(lstValues):
+    
+    # Sort the list:
+    # data_file.Sort()
+    
+    #Determine if there is an odd or even number:
+    if len(lstValue) % 2 == 0:
+
+        n = (iEntriesInList)
+        #even
+        print ('median = [n // 2]')
+        # pass
+    else:
+        #odd
+        print('Median = [n//2 + 1]')
+
+def main():
+
+    dictCityjf = {}
+    dictZipjf = {}
+    dictTypejf = {}
+    
+    # Get the data from the file into ONE list:
+    lstDatajf = getDataInput()
+    iEntriesInList = len(lstDatajf)
+    print(f"Data {iEntriesInList}")
+
+    # Process each record and get the data needed:
+    for DataRecord in lstDatajf:
+        sCity = DataRecord[1]
+        sZip = DataRecord[2]
+        sType = DataRecord[7]
+        fPrice = float(DataRecord[8])
+        #print(sCity, sZip, sType,fPrice )
+
+        # Sum up City, Type and Zip
+        for sCity in dictCityjf: 
+          dictCityjf [sCity] += fPrice
+        else:
+          dictCityjf [sCity] = fPrice
+          
+        
+        # Sum up Property Type 
+        if sType in dictTypejf: 
+          dictTypejf [sType] += fPrice
+        else:
+          dictTypejf [sType] = fPrice
+
+        # Sum up ZipCode 
+        
+        if sZip in dictZipjf: 
+          dictZipjf [sZip] += fPrice
+        else:          
+            dictZipjf [sZip] = fPrice
+            #Output City Summaries:
+            for sCityNamejf, fSummedValue in dictCityjf.items():
+                
+                print(f"{sCityNamejf:30s}   {fSummedValue:20,.2f}")
+
+            #Output PROPERTY TYPE code Summaries:
+            for sTypejf, fSummedValue in dictTypejf.items():
+                
+                print(f"{sTypejf:30s}   {fSummedValue:20,.2f}")
+               
+            #Output ZIP code Summaries:
+            for sZipjf, fSummedValue in dictZipjf.items():
+                
+                print(f"{sZipjf:30s}   {fSummedValue:20,.2f}")
+                 
+def getMedian():
+
+        # Sort datafile #2  list:
+        data_file2.Sort()
+    
+        # Determine if there is an odd or even number:
+        if len(lstValue) % 2 == 0:
+            
+            #even
+            print ('median = [n // 2]')
+        else:
+            #odd
+            print('Median = [n//2 + 1]')
+
+            # property price data         
+            if data_column2:
+                Median = (DataRecordjf [n//2 - 1] + DataRecordjf [n//2]) / 2
+            else:
+                median = DataRecord[n//2]
+
+                # Output Results
+                print("Sample Output")
+        
+                print(f"Minimum: {column_min}")
+        
+                print(f"Maximum: {column_max}")
+        
+                print(f"Sum: {column_sum}")
+        
+                print(f"Average: {column_avg:.2f}")
+        
+                print(f"Median:  {median}")
+    
+main()
+
